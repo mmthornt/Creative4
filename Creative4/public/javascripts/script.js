@@ -5,6 +5,9 @@ let Vue = new Vue({
         author: "",
         board: [],
     },
+    created: function(){
+        this.getQuotes();
+    },
     methods: {
         async getQuotes() {
           try {
