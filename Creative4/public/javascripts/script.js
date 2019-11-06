@@ -14,7 +14,7 @@ let app = new Vue({
         async getQuotes() {
           try {
               console.log("in function");
-              let response = await axios.get("/quotes");
+              const response = await axios.get("/quotes");
               this.board = response.data;
               console.log(response);
               return true;
