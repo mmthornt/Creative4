@@ -7,21 +7,25 @@
     <link rel="stylesheet" href="stylesheets/style.css">
 </head>
 
-<body id="body">
-    <h1>Welcome to the quote board!</h1>
-    <h2>Enter a new quote to add it to the page.</h2>
-    <form>
-        <input type="text" placeholder="Quote" v-model="quote">
-        <br>
-        <input type="text" placeholder="Author" v-model="author">
-    </form>
-
-    <div id="quotes">
-        <ul>
-            <li v-for="items in board">
-                
-            </li>
-        </ul>
+<body>
+    <div id="app">
+        <h1>Welcome to the quote board!</h1>
+        <h2>Enter a new quote to add it to the page.</h2>
+        <form>
+            <input type="text" placeholder="Quote" v-model="quote">
+            <br>
+            <input type="text" placeholder="Author" v-model="author">
+            <br>
+            <button type="submit" onclick="putQuote">Submit</button>
+        </form>
+    
+        <div id="quotes">
+            <ul>
+                <li v-for="items in board">
+                    
+                </li>
+            </ul>
+        </div>
     </div>
 </body>
 
