@@ -63,6 +63,19 @@ router.get('/quotes', function(req, res) {
     
 });
 
+router.post('/quotes', function(req, res){
+    console.log("In Quotes post");
+    collection.insertOne(req.body, function(err, result)
+    {
+        if(err){
+            console.log(err);
+        }
+        else{
+            console.log('Inserted document into "quotes" collection');
+            res.end('{"success" : "Updated Successfully", "status" : 200}');
+        }
+    });
+});
 
 
 var quotes = [{
