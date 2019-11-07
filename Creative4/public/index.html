@@ -16,12 +16,14 @@
             <br>
             <input type="text" placeholder="Author" v-model="author">
             <br>
-            <button type="submit" onclick="putQuote">Submit</button>
+            <button type="submit" @click="addItem">Submit</button>
         </form>
 
         <div id="quotes">
             <ul>
                 <li v-for="items in board">
+                    {{items.quote }}
+                    {{items.author}}
 
                 </li>
             </ul>
