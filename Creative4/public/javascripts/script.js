@@ -25,7 +25,7 @@ let app = new Vue({
             if (this.quote.trim() !== '') {
                 var url="/quotes";
                 axios.post(url,{
-                    quote: this.quote,
+                    quote: this.quote.trim(),
                     author: this.author,
                 })
                 .then(response=>{})
@@ -39,7 +39,7 @@ let app = new Vue({
         },
         async deleteQuote(item) {
             try {
-                let response = await axios.delete("/quotes/" + item.quote);
+                let response = await axios.delete("/quotes/" + item.quote.trim());
                 console.log(item.quote);
                 this.getQuotes();
                 return true;
