@@ -22,18 +22,20 @@ let app = new Vue({
           }
         },
         addItem(){
-            var url="/quotes";
-            axios.post(url,{
-                quote: this.quote,
-                author: this.author,
-            })
-            .then(response=>{})
-            .catch(e=>{
-                console.log(e);
-            });
-            this.quote='';
-            this.author='';
-            this.getQuotes();
+            if (this.quote !== '') {
+                var url="/quotes";
+                axios.post(url,{
+                    quote: this.quote,
+                    author: this.author,
+                })
+                .then(response=>{})
+                .catch(e=>{
+                    console.log(e);
+                });
+                this.quote='';
+                this.author='';
+                this.getQuotes();
+            }
         },
         async deleteQuote(item) {
             try {
