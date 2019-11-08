@@ -22,7 +22,7 @@ let app = new Vue({
           }
         },
         addItem(){
-            if (this.quote !== '') {
+            if (this.quote.trim() !== '') {
                 var url="/quotes";
                 axios.post(url,{
                     quote: this.quote,
