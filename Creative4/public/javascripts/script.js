@@ -16,7 +16,7 @@ let app = new Vue({
               console.log("in function");
               const response = await axios.get("/quotes");
               this.board = response.data;
-              console.log(response);
+              console.log(response.data);
               return true;
           }
           catch(error) {
