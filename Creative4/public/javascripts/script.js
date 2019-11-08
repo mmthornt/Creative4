@@ -22,7 +22,7 @@ let app = new Vue({
           }
         },
         addItem(){
-            var url="http://hello.mmthornton.com:8080/quotes";
+            var url="/quotes";
             axios.post(url,{
                 quote: this.quote,
                 author: this.author,
@@ -35,5 +35,16 @@ let app = new Vue({
             this.author='';
             this.getQuotes();
         },
+        async deleteQuote(item) {
+            try {
+                let response = await axios.delete("/quotes/" + item.quote);
+                console.log(item.quote);
+                this.getQuotes();
+                return true;
+            }
+            catch(error) {
+                console.log(error);
+            }
+        }
     }
 });

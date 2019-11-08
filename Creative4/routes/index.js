@@ -77,6 +77,19 @@ router.post('/quotes', function(req, res){
     });
 });
 
+router.delete('/quotes/:quote', async (req, res) => {
+  console.log("In delete");
+  try {
+    await collection.deleteOne({
+      quote: req.params.quote
+    });
+    console.log(req.params.id);
+    res.sendStatus(200);
+  } catch (error) {
+    console.log(error);
+    res.sendStatus(500);
+  }
+});
 
 var quotes = [{
         quote: 'Make your life a masterpiece; imagine no limitations on what you can be, have or do.',

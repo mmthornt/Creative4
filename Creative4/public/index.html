@@ -24,7 +24,7 @@
                 <li v-for="items in board">
                     {{items.quote }}
                     {{items.author}}
-
+                    <button @click="deleteQuote(items)">Delete</button>
                 </li>
             </ul>
         </div>
