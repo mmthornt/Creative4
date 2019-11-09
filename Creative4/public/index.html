@@ -25,12 +25,15 @@
         <div id="quotes" id="quoteResult">
             <ul>
                 <li v-for="items in board">
-                    {{items.quote }}
-                    {{items.author}}
+                    {{items.quote }} - {{items.author}}
                     <button @click="deleteQuote(items)">Delete</button>
                 </li>
             </ul>
         </div>
+    </div>
+
+    <div id="footer">
+        <a href="https://github.com/mmthornt/Creative4.git">Github</a>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js" integrity="sha256-lrZTgsdM1iVdRigETFOU8u8/BmLX1ysQ8bzrULbuVFU=" crossorigin="anonymous"></script>

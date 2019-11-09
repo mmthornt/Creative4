@@ -4,6 +4,7 @@ body {
   font-family: 'Caveat', cursive;
   text-align: center;
   background-image: linear-gradient(to right, lightblue, aliceblue);
+  min-height:100%;
 }
 
 a {
@@ -48,4 +49,21 @@ form {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 30px;
+}
+#footer {
+    line-height:3rem;
+    display:block;
+    width:100%;
+    position:absolute;
+    top:100%;
+    background-color:#f2f2f2;
+    text-align:center;
+    left:0;
+}
+#footer > a {
+    text-decoration:none;
+    color:#808080;
+}
+html {
+    min-height:100%;
 }
